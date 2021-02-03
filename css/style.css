@@ -38,7 +38,7 @@ border-bottom: 0.5px solid #dadada;
 padding: 0 22px;
 }
 
-.modal-icons {
+.modal-end {
 border-top: 0.5px solid #dadada;
 height: 50px;
 width: 100%;
@@ -48,10 +48,6 @@ width: 100%;
 padding: 16px;
 }
 
-.logo-icon {
-vertical-align: text-bottom;
-margin-right: 12px;
-}
 
 .version {
 color: #444;
