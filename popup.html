@@ -3,6 +3,9 @@
   <head>
     <meta charset="UTF-8">
     <title>Quick meet launcher</title>
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.ddslick.min.js" ></script>
     <link
       href="https://fonts.googleapis.com/css?family=Open+Sans"
       rel="stylesheet"
@@ -14,8 +17,8 @@
       integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
       crossorigin="anonymous"
     />
+
     <link rel="stylesheet" href="css/style.css">
-    <script src="popup.js"></script>
   </head>
 
   <body>
@@ -23,68 +26,66 @@
     <!-- Header -->
     <div class="modal-header">
       <h1 class="logo">
-        <img class="logo-icon" src="images/logo.png">Google meet links<span class="version">(1.0.2)</span>
+        <img class="logo-icon" src="images/logo.png">Google meet links
       </h1>
     </div>
 
-    <!-- Mitten -->
-    <div class="modal-content">
+    <!-- Mitten del (Vanliga) -->
+    <div class="modal-content" id="mittendel" >
 
-      <!-- Programmering -->
-      <div class="flex">
-      <a href="https://meet.google.com/tyo-mkrm-dbq" target="_blank" ><img src="images/hacker.png" alt="Programmering">Programmering</a>
+      <!-- Delen där alla sparade klasser komer vissas -->
+      <div id="sparade_klasser">
+        <p>You have to add a class</p>
       </div>
 
-      <!-- Matematik -->
-      <div class="flex" >
-      <a href="https://meet.google.com/dph-yyje-nfm" target="_blank"><img src="images/math.png" alt="Matte"> Matte</a>
-      </div>
-
-      <!-- Engelska -->
-      <div class="flex">
-        <a href="https://meet.google.com/eog-mcrj-yms" target="_blank"><img src="images/english.png" alt="Engelska"> Engelska</a>
-      </div>
-      
-      <!-- Webbutveckling -->
-      <div class="flex">
-        <a href="https://meet.google.com/bnq-pxoz-odj" target="_blank" ><img src="images/html.png" alt="webbutveckling"> Webbutveckling</a>
-      </div>
-      
-      <!-- Språk -->
-      <div class="flex" >
-        <a href="https://meet.google.com/nng-ikaw-udd" target="_blank"><img src="images/language.png" alt="Språk"> Språk</a>
-      </div>
-
-      <!-- Svenska -->
-      <div class="flex">
-        <a href="https://meet.google.com/iob-hfgu-vfa" target="_blank"><img src="https://cdn.countryflags.com/thumbs/sweden/flag-400.png" alt="Svenska">Svenska</a>
-      </div>
-
-      <!-- Fysik -->
-      <div class="flex">
-        <a href="https://meet.google.com/lookup/dyck2v6ihe?authuser=1&hs=179" target="_blank" ><img src="images/atom.png" alt="fysik">Fysik</a>
-      </div>
-
-      <!-- Idrott -->
-      <div class="flex" >
-        <a href="https://meet.google.com/lookup/dxwshpdety?authuser=1&hs=179" target="_blank"><img src="images/gym.png" alt="idrott">Idrott</a>
-      </div>
-
-      <!-- Mentorstid -->
-      <div class="flex">
-        <a href="https://meet.google.com/vjp-hyya-aut" target="_blank"><img src="images/education.png" alt="Mentorstid">Mentorstid</a>
-      </div>   
-
+      <!-- Knapp för att ändra på länkarna -->
+      <a href="#" id="edit">Edit</a>
     </div>
+
+    <!-- Andra mittendel som visas när man trycker på edit knappen -->
+    <div class="modal-content2" id="mittendel2"  style="display: none;">
+      <!-- Add button -->
+      <button class="button" style="background-color: #4CAF50;" id="add" id="add">Add</button>
+
+      <div id="all_element_to_edit">
+      <!-- Elements  -->
+      <p>You have to add a class</p>
+      </div>
+
+      <a href="#" id="go_back1" style="display: block; margin-top: 10px;">Go Back</a>
+    </div>
+    <!------------------------------------------------------------ -->
+
+
+    <!-- Tredje mittendel som visas när man ska lägga till en ny element -->
+    <div class="modal-content2" id="mittendel3" style="display: none;">
+      <label for="name">Classroom name:</label><br>
+      <input class="mittendel3_input" type="text" id="name" name="name" placeholder="Ex. Math" autocomplete="off"><br>
+      <label for="name">Icon:</label><br>
+      <div id="myDropdown"></div>
+      <br>
+      
+      <label for="classroom">Classroom link:</label><br>
+      <input class="mittendel3_input" type="text" id="classroom" name="classroom" placeholder="https://www.classroom.com"  autocomplete="off"><br>
+<!--       
+      <label for="meet">Meet link:</label><br>
+      <input class="mittendel3_input" type="text" id="meet" name="meet" placeholder="https://www.google_meet.com"  autocomplete="off"><br>
+       -->
+      <button class="button" style="background-color: #4CAF50;" id="add_new" >ADD</button>
+      <a href="#" id="go_back" style="display: block; margin-top: 10px;">Go Back</a>
+    </div>
+    <!------------------------------------------------------------ -->
+
 
     <!-- End -->
     <div class="modal-end">
       <div class="flex-container">
         <div class="flex" id="github_icon" style="justify-content: center !important;">
-          <a href="https://github.com/ismail424/Quick-meet-launcher" target="_blank"><i class="fa fa-github" style="color:darksalmon "></i> Github</a>
+          <a id="github_link"href="https://github.com/ismail424/Quick-meet-launcher" target="_blank"><i class="fa fa-github" style="color:darksalmon "></i>Github</a>
         </div>
       </div>
     </div>
 
   </body>
+  <script src="js/popup.js"></script>
 </html>
